@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portofolio Jayden Salim — pengembang yang belajar membuat web dengan bantuan AI dalam bahasa Indonesia.">
+    <title>Jayden Salim — Portofolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        retro: ['VT323', 'monospace'],
+                        pixel: ['Press Start 2P', 'cursive'],
+                    },
+                    colors: {
+                        cream: '#FAF6ED',
+                        'cream-dark': '#F2EBDF',
+                        charcoal: '#1A1A1A',
+                        accent: '#B86B4C',
+                        'accent-dark': '#955237',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --cream: #FAF6ED;
+            --cream-dark: #F2EBDF;
+            --charcoal: #1A1A1A;
+            --accent: #B86B4C;
+            --accent-dark: #955237;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            overflow-x: hidden;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%231a1a1a' fill-opacity='0.035' fill-rule='evenodd'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: var(--cream);
+        }
+
+        .font-pixel {
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .font-retro {
+            font-family: 'VT323', monospace;
+        }
+
+        /* Retro buttons / links — single accent pop */
+        .btn-retro {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: #fff;
+            border: 2px solid var(--charcoal);
+            box-shadow: 4px 4px 0 var(--charcoal);
+            padding: 0.75rem 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+        }
+
+        .btn-retro:hover {
+            background: var(--accent-dark);
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 var(--charcoal);
+        }
+
+        .btn-retro:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0 0 0 var(--charcoal);
+        }
+
+        .btn-outline-retro {
+            background: transparent;
+            color: var(--charcoal);
+        }
+
+        .btn-outline-retro:hover {
+            background: var(--charcoal);
+            color: var(--cream);
+        }
+
+        .link-retro {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 3px;
+            font-weight: 700;
+            transition: color 0.2s ease;
+        }
+
+        .link-retro:hover {
+            color: var(--accent-dark);
+        }
+
+        /* Retro window card */
+        .retro-window {
+            background: var(--cream);
+            border: 2px solid var(--charcoal);
+            box-shadow: 8px 8px 0 var(--charcoal);
+            overflow: hidden;
+        }
+
+        .window-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--charcoal);
+            color: var(--cream);
+            padding: 0.55rem 1rem;
+            border-bottom: 2px solid var(--charcoal);
+        }
+
+        /* Skill card */
+        .skill-card {
+            background: var(--cream);
+            border: 2px solid var(--charcoal);
+            box-shadow: 6px 6px 0 var(--charcoal);
+            padding: 1.5rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .skill-card:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 9px 9px 0 var(--charcoal);
+        }
+
+        .skill-tag {
+            display: inline-block;
+            border: 1px solid var(--charcoal);
+            padding: 0.25rem 0.6rem;
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--charcoal);
+            color: var(--cream);
+        }
+
+        /* Project card */
+        .project-card {
+            background: var(--cream);
+            border: 2px solid var(--charcoal);
+            box-shadow: 6px 6px 0 var(--charcoal);
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 9px 9px 0 var(--charcoal);
+        }
+
+        .preview-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: var(--cream);
+            border-bottom: 2px solid var(--charcoal);
+            overflow: hidden;
+        }
+
+        .preview-frame {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        .preview-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(26, 26, 26, 0.45);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            color: var(--cream);
+            font-family: 'VT323', monospace;
+            font-size: 1.35rem;
+            pointer-events: none;
+        }
+
+        .project-card:hover .preview-overlay {
+            opacity: 1;
+        }
+
+        .card-body {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-body p {
+            flex: 1;
+        }
+
+        /* Gatekeeper / clear vintage Mac */
+        .gatekeeper {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: radial-gradient(1200px 900px at 50% 35%, var(--cream-dark), var(--cream));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            transition: opacity 0.7s ease, visibility 0.7s ease;
+        }
+
+        .gatekeeper.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        /* Macintosh scene */
+        .mac-scene {
+            position: relative;
+            width: min(94vw, 520px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mac-case {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 3px solid var(--charcoal);
+            border-radius: 28px;
+            box-shadow:
+                inset 0 0 40px rgba(255,255,255,0.5),
+                inset 0 0 80px rgba(250,246,237,0.35),
+                0 20px 60px rgba(26,26,26,0.1);
+            overflow: hidden;
+        }
+
+        .mac-circuit {
+            position: absolute;
+            inset: 5%;
+            border-radius: 20px;
+            background-image:
+                repeating-linear-gradient(0deg, transparent, transparent 18px, rgba(26,26,26,0.05) 18px, rgba(26,26,26,0.05) 19px),
+                repeating-linear-gradient(90deg, transparent, transparent 18px, rgba(26,26,26,0.05) 18px, rgba(26,26,26,0.05) 19px);
+            border: 1px solid rgba(26,26,26,0.1);
+        }
+
+        .mac-motherboard {
+            position: absolute;
+            left: 8%;
+            top: 12%;
+            width: 20%;
+            height: 55%;
+            background: rgba(26,26,26,0.06);
+            border: 2px solid rgba(26,26,26,0.18);
+            border-radius: 4px;
+        }
+
+        .mb-chip {
+            position: absolute;
+            top: 10%;
+            left: 8%;
+            right: 8%;
+            height: 30%;
+            background: rgba(184,107,76,0.22);
+            border: 2px solid var(--accent);
+            border-radius: 3px;
+        }
+
+        .mb-line {
+            position: absolute;
+            left: 12%;
+            right: 12%;
+            height: 7%;
+            background: rgba(26,26,26,0.22);
+            border-radius: 1px;
+        }
+        .mb-line:nth-of-type(2) { top: 52%; }
+        .mb-line:nth-of-type(3) { top: 66%; }
+
+        .mac-fan {
+            position: absolute;
+            right: 35%;
+            top: 15%;
+            width: 12%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 2px solid rgba(26,26,26,0.18);
+            background: rgba(26,26,26,0.06);
+        }
+
+        .mac-fan::after {
+            content: '';
+            position: absolute;
+            inset: 30%;
+            border-radius: 50%;
+            border: 2px solid rgba(26,26,26,0.12);
+        }
+
+        .mac-wire {
+            position: absolute;
+            height: 3px;
+            border-radius: 2px;
+        }
+
+        .mac-wire-accent {
+            left: 30%;
+            top: 42%;
+            width: 32%;
+            background: var(--accent);
+            opacity: 0.75;
+            transform: rotate(6deg);
+        }
+
+        .mac-wire-dark {
+            left: 30%;
+            top: 52%;
+            width: 38%;
+            background: var(--charcoal);
+            opacity: 0.3;
+            transform: rotate(10deg);
+        }
+
+        .mac-drive {
+            position: absolute;
+            right: 10%;
+            top: 8%;
+            width: 22%;
+            height: 4%;
+            background: rgba(26,26,26,0.2);
+            border-radius: 2px;
+        }
+
+        .mac-bezel {
+            position: absolute;
+            left: 22%;
+            right: 22%;
+            top: 12%;
+            bottom: 14%;
+            background: var(--charcoal);
+            border-radius: 14px;
+            padding: 3.5%;
+        }
+
+        .mac-screen {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, var(--cream) 0%, #EDE6D8 100%);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .mac-screen::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 3px,
+                rgba(26,26,26,0.04) 3px,
+                rgba(26,26,26,0.04) 6px
+            );
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .mac-screen-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            gap: 0.15em;
+            padding: clamp(4px, 1.5vw, 14px);
+            text-align: center;
+        }
+
+        .screen-title {
+            font-size: clamp(9px, 2.8vw, 14px);
+            margin-bottom: 0.25em;
+            letter-spacing: 0.06em;
+        }
+
+        .screen-line {
+            font-size: clamp(12px, 3.2vw, 18px);
+            line-height: 1.15;
+        }
+
+        .screen-prompt {
+            font-size: clamp(11px, 3vw, 17px);
+            color: var(--accent);
+            margin-top: 0.35em;
+            line-height: 1.15;
+        }
+
+        .screen-led {
+            position: absolute;
+            right: 5%;
+            bottom: 5%;
+            width: clamp(5px, 1.2vw, 9px);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: var(--accent);
+            z-index: 2;
+        }
+
+        .mac-stand {
+            width: 42%;
+            height: clamp(16px, 4vw, 36px);
+            background: rgba(26,26,26,0.12);
+            border: 2px solid var(--charcoal);
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            clip-path: polygon(10% 0, 90% 0, 100% 100%, 0% 100%);
+            margin-top: -2px;
+        }
+
+        .mac-shadow {
+            width: 55%;
+            height: clamp(6px, 1.5vw, 14px);
+            background: rgba(26,26,26,0.1);
+            border-radius: 50%;
+            margin-top: 6px;
+            filter: blur(4px);
+        }
+
+        .key-hint {
+            margin-top: 1.5rem;
+            font-family: 'VT323', monospace;
+            font-size: 1.25rem;
+            color: var(--charcoal);
+            text-align: center;
+            animation: hintPulse 2.4s ease-in-out infinite;
+        }
+
+        @keyframes hintPulse {
+            0%, 100% { opacity: 0.45; }
+            50% { opacity: 1; }
+        }
+
+        .blink-cursor {
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .led-pulse {
+            animation: ledPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes ledPulse {
+            0%, 100% { opacity: 0.55; }
+            50% { opacity: 1; }
+        }
+
+        /* Navigation */
+        .nav-glass {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(250, 246, 237, 0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid var(--charcoal);
+        }
+
+        /* Scroll reveal */
+        .reveal,
+        .reveal-up,
+        .reveal-down,
+        .reveal-left,
+        .reveal-right {
+            opacity: 0;
+            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal { transform: translateY(24px); }
+        .reveal-up { transform: translateY(24px); }
+        .reveal-down { transform: translateY(-24px); }
+        .reveal-left { transform: translateX(-24px); }
+        .reveal-right { transform: translateX(24px); }
+
+        .reveal.in-view,
+        .reveal-up.in-view,
+        .reveal-down.in-view,
+        .reveal-left.in-view,
+        .reveal-right.in-view {
+            opacity: 1;
+            transform: none;
+        }
+
+        .reveal-delay-1 { transition-delay: 0.08s; }
+        .reveal-delay-2 { transition-delay: 0.16s; }
+        .reveal-delay-3 { transition-delay: 0.24s; }
+        .reveal-delay-4 { transition-delay: 0.32s; }
+
+        /* Marquee */
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Typography scaling */
+        .hero-title {
+            font-size: clamp(2.6rem, 10vw, 6.2rem);
+            line-height: 1.0;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 6vw, 3.6rem);
+            line-height: 1.08;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--charcoal);
+            border: 2px solid var(--cream);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 640px) {
+            .btn-retro {
+                padding: 0.65rem 1.25rem;
+                font-size: 0.875rem;
+            }
+            .mac-scene {
+                width: min(96vw, 400px);
+            }
+            .key-hint {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-cream text-charcoal antialiased overflow-x-hidden">
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- GATEKEEPER — CLEAR CASE VINTAGE MACINTOSH  -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="gatekeeper" id="gatekeeper" role="dialog" aria-label="Layar pembuka">
+        <div class="mac-scene">
+            <!-- Clear case body -->
+            <div class="mac-case">
+                <!-- Circuit pattern background -->
+                <div class="mac-circuit"></div>
+
+                <!-- Internal components visible through clear case -->
+                <div class="mac-motherboard">
+                    <div class="mb-chip"></div>
+                    <div class="mb-line"></div>
+                    <div class="mb-line"></div>
+                </div>
+                <div class="mac-fan"></div>
+                <div class="mac-wire mac-wire-accent"></div>
+                <div class="mac-wire mac-wire-dark"></div>
+                <div class="mac-drive"></div>
+
+                <!-- Screen bezel -->
+                <div class="mac-bezel">
+                    <div class="mac-screen">
+                        <div class="mac-screen-content">
+                            <div class="screen-title font-pixel">PORTOFOLIO_OS v2.0</div>
+                            <div class="screen-line font-retro">&gt; SISTEM SIAP</div>
+                            <div class="screen-line font-retro">&gt; PENGGUNA: JAYDEN_SALIM</div>
+                            <div class="screen-line font-retro">&gt; STATUS: DARING</div>
+                            <div class="screen-prompt font-retro">TEKAN [ ENTER ] UNTUK MASUK <span class="blink-cursor">_</span></div>
+                        </div>
+                        <div class="screen-led led-pulse"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stand & shadow -->
+            <div class="mac-stand"></div>
+            <div class="mac-shadow"></div>
+        </div>
+        <div class="key-hint">KLIK LAYAR ATAU TEKAN ENTER</div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- MAIN PORTFOLIO                             -->
+    <!-- ═══════════════════════════════════════════ -->
+    <main id="mainContent" class="opacity-0 transition-opacity duration-1000">
+
+        <!-- Navigation -->
+        <nav class="nav-glass">
+            <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+                <a href="#beranda" class="font-pixel text-xs md:text-sm tracking-widest text-charcoal hover:text-accent transition-colors">JS_</a>
+
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#tentang" class="font-retro text-lg hover:text-accent transition-colors">TENTANG</a>
+                    <a href="#keahlian" class="font-retro text-lg hover:text-accent transition-colors">KEAHLIAN</a>
+                    <a href="#proyek" class="font-retro text-lg hover:text-accent transition-colors">PROYEK</a>
+                    <a href="#kontak" class="font-retro text-lg hover:text-accent transition-colors">KONTAK</a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <a href="mailto:luminaethereal28@gmail.com" class="hidden sm:inline-flex btn-retro text-xs px-4 py-2">REKRUT SAYA</a>
+                    <button id="menuBtn" class="md:hidden p-2 border-2 border-charcoal bg-cream shadow-[3px_3px_0_#1A1A1A]" aria-label="Buka menu">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobileMenu" class="hidden md:hidden border-t-2 border-charcoal bg-cream px-4 pb-4 pt-2">
+                <a href="#tentang" class="block font-retro text-xl py-2 hover:text-accent transition-colors">TENTANG</a>
+                <a href="#keahlian" class="block font-retro text-xl py-2 hover:text-accent transition-colors">KEAHLIAN</a>
+                <a href="#proyek" class="block font-retro text-xl py-2 hover:text-accent transition-colors">PROYEK</a>
+                <a href="#kontak" class="block font-retro text-xl py-2 hover:text-accent transition-colors">KONTAK</a>
+                <a href="mailto:luminaethereal28@gmail.com" class="inline-flex mt-3 btn-retro text-xs px-4 py-2">REKRUT SAYA</a>
+            </div>
+        </nav>
+
+        <!-- Hero -->
+        <section id="beranda" class="min-h-screen flex items-center justify-center relative px-6 pt-24">
+            <div class="max-w-5xl mx-auto text-center">
+                <div class="reveal-down mb-6">
+                    <span class="inline-block font-retro text-sm md:text-base tracking-widest border-2 border-charcoal px-4 py-2 bg-cream shadow-[4px_4px_0_#1A1A1A]">
+                        &gt; PENGEMBANG_FULL_STACK
+                    </span>
+                </div>
+
+                <h1 class="reveal hero-title font-bold tracking-tight mb-6">
+                    <span class="block">JAYDEN</span>
+                    <span class="block">SALIM</span>
+                </h1>
+
+                <p class="reveal-up text-lg md:text-xl opacity-80 max-w-2xl mx-auto mb-10 font-retro leading-relaxed">
+                    Membangun masa depan dengan kode, satu piksel dalam satu waktu.<br>
+                    <span class="text-sm opacity-70">Pengembangan bertenaga AI // Estetika retro-futuristik</span>
+                </p>
+
+                <div class="reveal-up reveal-delay-2 flex flex-wrap items-center justify-center gap-4">
+                    <a href="#proyek" class="btn-retro">
+                        LIHAT KARYA
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                    <a href="#kontak" class="btn-retro btn-outline-retro">HUBUNGI SAYA</a>
+                </div>
+
+                <div class="reveal-up reveal-delay-3 mt-16 flex flex-wrap items-center justify-center gap-3 text-base md:text-lg font-retro opacity-60">
+                    <span>HTML</span>
+                    <span>/</span>
+                    <span>CSS</span>
+                    <span>/</span>
+                    <span>JS</span>
+                    <span>/</span>
+                    <span>PYTHON</span>
+                    <span>/</span>
+                    <span>AI</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee -->
+        <div class="bg-charcoal text-cream overflow-hidden py-3 border-y-2 border-charcoal">
+            <div class="marquee-track">
+                <span class="font-retro text-base md:text-lg tracking-widest mx-6">BELAJAR KODING BERBASIS AI</span>
+                <span class="mx-3 opacity-70">&#10022;</span>
+                <span class="font-retro text-base md:text-lg tracking-widest mx-6">MEMBANGUN MASA DEPAN</span>
+                <span class="mx-3 opacity-70">&#10022;</span>
+                <span class="font-retro text-base md:text-lg tracking-widest mx-6">DESAIN RETRO Y2K</span>
+                <span class="mx-3 opacity-70">&#10022;</span>
+                <span class="font-retro text-base md:text-lg tracking-widest mx-6">EKSPERIMEN KREATIF</span>
+                <span class="mx-3 opacity-70">&#10022;</span>
+                <span class="font-retro text-base md:text-lg tracking-widest mx-6">BELAJAR KODING BERBASIS AI</span>
+                <span class="mx-3 opacity-70">&#10022;</span>
+                <span class="font-retro text-base md:text-lg tracking-widest mx-6">MEMBANGUN MASA DEPAN</span>
+                <span class="mx-3 opacity-70">&#10022;</span>
+                <span class="font-retro text-base md:text-lg tracking-widest mx-6">DESAIN RETRO Y2K</span>
+                <span class="mx-3 opacity-70">&#10022;</span>
+                <span class="font-retro text-base md:text-lg tracking-widest mx-6">EKSPERIMEN KREATIF</span>
+                <span class="mx-3 opacity-70">&#10022;</span>
+            </div>
+        </div>
+
+        <!-- About -->
+        <section id="tentang" class="py-24 md:py-32 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="reveal-right">
+                        <span class="inline-block font-retro text-base tracking-widest mb-4 border-2 border-charcoal px-3 py-1">&gt; TENTANG_SAYA</span>
+                        <h2 class="section-title font-bold mb-6">
+                            Menjelajahi titik temu<br>
+                            <span class="font-retro">desain &amp; kode</span>
+                        </h2>
+                        <p class="mb-4 leading-relaxed">
+                            Saya Jayden Salim, seorang pengembang yang sedang belajar membuat web dengan bantuan AI.
+                            Saya suka mencampurkan desain berani dari era akhir 90-an dan awal 2000-an dengan teknologi modern.
+                        </p>
+                        <p class="mb-6 leading-relaxed">
+                            Setiap proyek adalah eksperimen. Setiap baris kode adalah langkah menuju sesuatu yang belum ada kemarin.
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-1 bg-charcoal"></div>
+                            <span class="font-retro text-base opacity-70">BERDIRI 2024</span>
+                        </div>
+                    </div>
+
+                    <div class="reveal-left">
+                        <div class="retro-window">
+                            <div class="window-title">
+                                <span class="font-retro text-xl">TENTANG_SAYA.exe</span>
+                                <div class="flex gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-cream"></span>
+                                    <span class="w-3 h-3 rounded-full bg-cream"></span>
+                                </div>
+                            </div>
+                            <div class="p-6 space-y-3 font-retro text-lg md:text-xl">
+                                <div class="flex justify-between border-b border-charcoal/10 pb-2">
+                                    <span class="opacity-60">NAMA</span>
+                                    <span>Jayden Salim</span>
+                                </div>
+                                <div class="flex justify-between border-b border-charcoal/10 pb-2">
+                                    <span class="opacity-60">PERAN</span>
+                                    <span>Pengembang Berbasis AI</span>
+                                </div>
+                                <div class="flex justify-between border-b border-charcoal/10 pb-2">
+                                    <span class="opacity-60">LOKASI</span>
+                                    <span>The Grid</span>
+                                </div>
+                                <div class="flex justify-between border-b border-charcoal/10 pb-2">
+                                    <span class="opacity-60">STATUS</span>
+                                    <span class="font-bold">AKTIF</span>
+                                </div>
+                                <div class="pt-2">
+                                    <span class="opacity-60 block mb-1">BIO</span>
+                                    <p class="text-base leading-relaxed">
+                                        Saat ini sedang mempelajari HTML, CSS, JavaScript, dan Python.
+                                        Tertarik dengan potensi pengembangan berbasis AI dan pengalaman digital yang berani.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="keahlian" class="py-24 md:py-32 px-6 bg-cream-dark">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="reveal-down inline-block font-retro text-base tracking-widest mb-4 border-2 border-charcoal px-3 py-1">&gt; TEKNOLOGI</span>
+                    <h2 class="reveal-up section-title font-bold">Perangkat Pilihan</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Skill 1 -->
+                    <div class="reveal-up reveal-delay-1 skill-card">
+                        <div class="flex items-center justify-between mb-5">
+                            <span class="font-retro text-3xl font-bold">01</span>
+                            <svg class="w-8 h-8 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">HTML / CSS</h3>
+                        <p class="opacity-80 text-sm leading-relaxed mb-5">
+                            Markup semantik, CSS modern, flexbox, grid, dan pola desain responsif.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Tailwind</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill 2 -->
+                    <div class="reveal-up reveal-delay-2 skill-card">
+                        <div class="flex items-center justify-between mb-5">
+                            <span class="font-retro text-3xl font-bold">02</span>
+                            <svg class="w-8 h-8 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">JavaScript</h3>
+                        <p class="opacity-80 text-sm leading-relaxed mb-5">
+                            Pengalaman interaktif, manipulasi DOM, dan fitur-fitur modern ES6+.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">ES6+</span>
+                            <span class="skill-tag">DOM</span>
+                            <span class="skill-tag">Events</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill 3 -->
+                    <div class="reveal-up reveal-delay-3 skill-card">
+                        <div class="flex items-center justify-between mb-5">
+                            <span class="font-retro text-3xl font-bold">03</span>
+                            <svg class="w-8 h-8 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Python</h3>
+                        <p class="opacity-80 text-sm leading-relaxed mb-5">
+                            Skrip, otomasi, dan dasar-dasar backend dengan praktik kode bersih.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">Skrip</span>
+                            <span class="skill-tag">Logika</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill 4 -->
+                    <div class="reveal-up reveal-delay-1 skill-card">
+                        <div class="flex items-center justify-between mb-5">
+                            <span class="font-retro text-3xl font-bold">04</span>
+                            <svg class="w-8 h-8 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">AI Tools</h3>
+                        <p class="opacity-80 text-sm leading-relaxed mb-5">
+                            Memanfaatkan asisten koding AI untuk membangun lebih cepat dan belajar lebih cerdas.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">LLMs</span>
+                            <span class="skill-tag">Prompting</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill 5 -->
+                    <div class="reveal-up reveal-delay-2 skill-card">
+                        <div class="flex items-center justify-between mb-5">
+                            <span class="font-retro text-3xl font-bold">05</span>
+                            <svg class="w-8 h-8 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Desain</h3>
+                        <p class="opacity-80 text-sm leading-relaxed mb-5">
+                            Desain visual berani dengan tipografi kuat, warna lembut, dan sentuhan retro.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">UI</span>
+                            <span class="skill-tag">UX</span>
+                            <span class="skill-tag">Motion</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill 6 -->
+                    <div class="reveal-up reveal-delay-3 skill-card">
+                        <div class="flex items-center justify-between mb-5">
+                            <span class="font-retro text-3xl font-bold">06</span>
+                            <svg class="w-8 h-8 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Git</h3>
+                        <p class="opacity-80 text-sm leading-relaxed mb-5">
+                            Kontrol versi, kolaborasi, dan manajemen proyek dengan alur kerja Git.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">Commit</span>
+                            <span class="skill-tag">Branch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="proyek" class="py-24 md:py-32 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-16">
+                    <span class="reveal-down inline-block font-retro text-base tracking-widest mb-4 border-2 border-charcoal px-3 py-1">&gt; KARYA_PILIHAN</span>
+                    <h2 class="reveal-up section-title font-bold">Proyek Unggulan</h2>
+                    <p class="reveal-left mt-4 opacity-80 max-w-xl">
+                        Kumpulan eksperimen dan hasil karya dari perjalanan belajar saya. Setiap kartu menampilkan pratinjau langsung dari proyek.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1: Calculator -->
+                    <article class="reveal-up reveal-delay-1 project-card">
+                        <div class="preview-wrap">
+                            <iframe src="../calculator/calculator.html" class="preview-frame" loading="lazy" scrolling="no" style="overflow:hidden" title="Pratinjau Kalkulator"></iframe>
+                            <div class="preview-overlay">LIHAT PROYEK</div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="text-xl font-bold mb-2">Kalkulator</h3>
+                            <p class="text-sm opacity-80 mb-4">Kalkulator interaktif yang dibangun dengan HTML, CSS, dan JavaScript.</p>
+                            <a href="../calculator/calculator.html" target="_blank" class="link-retro text-sm">Buka Proyek &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: To-Do List -->
+                    <article class="reveal-up reveal-delay-2 project-card">
+                        <div class="preview-wrap">
+                            <iframe src="../todo-list/todo-list.html" class="preview-frame" loading="lazy" scrolling="no" style="overflow:hidden" title="Pratinjau Daftar Tugas"></iframe>
+                            <div class="preview-overlay">LIHAT PROYEK</div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="text-xl font-bold mb-2">Daftar Tugas</h3>
+                            <p class="text-sm opacity-80 mb-4">Aplikasi daftar tugas sederhana dengan penyimpanan di peramban.</p>
+                            <a href="../todo-list/todo-list.html" target="_blank" class="link-retro text-sm">Buka Proyek &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Running Page -->
+                    <article class="reveal-up reveal-delay-3 project-card">
+                        <div class="preview-wrap">
+                            <iframe src="../running-page/index.html" class="preview-frame" loading="lazy" scrolling="no" style="overflow:hidden" title="Pratinjau Pelacak Lari"></iframe>
+                            <div class="preview-overlay">LIHAT PROYEK</div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="text-xl font-bold mb-2">Pelacak Lari</h3>
+                            <p class="text-sm opacity-80 mb-4">Dasbor pelacakan aktivitas lari dengan visualisasi data sederhana.</p>
+                            <a href="../running-page/index.html" target="_blank" class="link-retro text-sm">Buka Proyek &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: Dominico Landing -->
+                    <article class="reveal-up reveal-delay-1 project-card">
+                        <div class="preview-wrap">
+                            <iframe src="../dominico-landing/dominico.html" class="preview-frame" loading="lazy" scrolling="no" style="overflow:hidden" title="Pratinjau Dominico Landing"></iframe>
+                            <div class="preview-overlay">LIHAT PROYEK</div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="text-xl font-bold mb-2">Dominico Landing</h3>
+                            <p class="text-sm opacity-80 mb-4">Kumpulan halaman arahan dengan beberapa tema visual berbeda.</p>
+                            <a href="../dominico-landing/dominico.html" target="_blank" class="link-retro text-sm">Buka Proyek &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 5: Homepage -->
+                    <article class="reveal-up reveal-delay-2 project-card">
+                        <div class="preview-wrap">
+                            <iframe src="../homepage/homepage.html" class="preview-frame" loading="lazy" scrolling="no" style="overflow:hidden" title="Pratinjau Beranda"></iframe>
+                            <div class="preview-overlay">LIHAT PROYEK</div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="text-xl font-bold mb-2">Beranda</h3>
+                            <p class="text-sm opacity-80 mb-4">Halaman beranda pribadi sebagai latihan layout dan styling.</p>
+                            <a href="../homepage/homepage.html" target="_blank" class="link-retro text-sm">Buka Proyek &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 6: Hello World -->
+                    <article class="reveal-up reveal-delay-3 project-card">
+                        <div class="preview-wrap">
+                            <iframe src="../my-first-project/hello-world.html" class="preview-frame" loading="lazy" scrolling="no" style="overflow:hidden" title="Pratinjau Halo Dunia"></iframe>
+                            <div class="preview-overlay">LIHAT PROYEK</div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="text-xl font-bold mb-2">Halo Dunia</h3>
+                            <p class="text-sm opacity-80 mb-4">Langkah pertama dalam perjalanan belajar pengembangan web.</p>
+                            <a href="../my-first-project/hello-world.html" target="_blank" class="link-retro text-sm">Buka Proyek &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="kontak" class="py-24 md:py-32 px-6 bg-cream-dark">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="reveal-down inline-block font-retro text-base tracking-widest mb-4 border-2 border-charcoal px-3 py-1">&gt; MULAI_KONTAK</span>
+                <h2 class="reveal-up section-title font-bold mb-6">
+                    Mari ciptakan<br>
+                    sesuatu yang berani
+                </h2>
+                <p class="reveal-up text-lg opacity-80 mb-10 max-w-2xl mx-auto">
+                    Terbuka untuk kolaborasi, kesempatan belajar, serta eksperimen kreatif.
+                </p>
+
+                <div class="reveal-up reveal-delay-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="mailto:luminaethereal28@gmail.com" class="btn-retro text-base px-8 py-4">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        KIRIM EMAIL
+                    </a>
+                    <a href="https://www.linkedin.com/in/jayden-salim/" target="_blank" rel="noopener noreferrer" class="btn-retro btn-outline-retro text-base px-8 py-4">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+                        </svg>
+                        LINKEDIN
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-charcoal text-cream py-12 px-6">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="font-retro text-sm opacity-60">&copy; 2024 JAYDEN SALIM // SEMUA SISTEM BERJALAN</div>
+                <div class="flex items-center gap-6">
+                    <a href="mailto:luminaethereal28@gmail.com" class="font-retro text-sm hover:text-accent transition-colors">EMAIL</a>
+                    <a href="https://www.linkedin.com/in/jayden-salim/" target="_blank" rel="noopener noreferrer" class="font-retro text-sm hover:text-accent transition-colors">LINKEDIN</a>
+                </div>
+                <div class="font-retro text-xs opacity-40">DIBANGUN DENGAN BANTUAN AI</div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Gatekeeper logic
+        const gatekeeper = document.getElementById('gatekeeper');
+        const mainContent = document.getElementById('mainContent');
+        let gatekeeperOpen = false;
+
+        function openGatekeeper() {
+            if (gatekeeperOpen) return;
+            gatekeeperOpen = true;
+            gatekeeper.classList.add('hidden');
+            mainContent.classList.remove('opacity-0');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') openGatekeeper();
+        });
+
+        gatekeeper.addEventListener('click', openGatekeeper);
+        document.body.style.overflow = 'hidden';
+
+        // Bypass gatekeeper if URL has a hash
+        if (window.location.hash) {
+            openGatekeeper();
+        }
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Intersection Observer for reveal animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -60px 0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .reveal-up, .reveal-down, .reveal-left, .reveal-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Subtle nav shadow on scroll
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const nav = document.querySelector('nav');
+                    if (window.pageYOffset > 40) {
+                        nav.style.boxShadow = '0 6px 0 rgba(26,26,26,0.08)';
+                    } else {
+                        nav.style.boxShadow = 'none';
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+    </script>
+</body>
+</html>
